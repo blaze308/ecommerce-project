@@ -69,6 +69,97 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       ),
       // popular text
       SizedBox(height: Dimensions.height30),
+      Container(
+        margin: EdgeInsets.only(left: Dimensions.height30),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            const BigText(text: "Popular"),
+            SizedBox(width: Dimensions.height10),
+            Container(
+              margin: const EdgeInsets.only(bottom: 3),
+              child: BigText(text: ".", color: Colors.black26),
+            ),
+            SizedBox(width: Dimensions.height10),
+            Container(
+              margin: const EdgeInsets.only(bottom: 2),
+              child: SmallText(text: "Food Pairing"),
+            ),
+          ],
+        ),
+      ),
+      ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                  left: Dimensions.height20,
+                  right: Dimensions.height20,
+                  bottom: Dimensions.height10),
+              child: Row(
+                children: [
+                  // image section
+                  Container(
+                    width: Dimensions.listViewImgSize,
+                    height: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                        color: Colors.white30,
+                        image: DecorationImage(
+                            image: NetworkImage(imageOnline2),
+                            fit: BoxFit.cover),
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20)),
+                  ),
+                  //text container
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContSize,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(Dimensions.radius20),
+                            bottomRight: Radius.circular(Dimensions.radius20)),
+                        color: Colors.white24,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: Dimensions.height10,
+                            right: Dimensions.height10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BigText(text: "Delicious Beverage Apples"),
+                            SizedBox(height: Dimensions.height10),
+                            SmallText(text: "With Chinese Characteristics"),
+                            SizedBox(height: Dimensions.height10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                IconAndTextWidget(
+                                    icon: Icons.circle_sharp,
+                                    text: "Normal",
+                                    iconColor: AppColors.iconColor),
+                                IconAndTextWidget(
+                                    icon: Icons.location_on,
+                                    text: "1.7km",
+                                    iconColor: AppColors.mainColor),
+                                IconAndTextWidget(
+                                    icon: Icons.access_time_rounded,
+                                    text: "32min",
+                                    iconColor: AppColors.iconColor2),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            );
+          })
     ]);
   }
 
@@ -175,7 +266,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               text: "32min",
                               iconColor: AppColors.iconColor2),
                         ],
-                      )
+                      ),
                     ])),
           ),
         )

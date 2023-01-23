@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/home/food_page_body.dart';
+import 'package:ecommerce_app/pages/home/food_page_body.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/dimensions.dart';
 import 'package:ecommerce_app/widgets/big_text.dart';
@@ -47,7 +47,10 @@ class _MainFoodPageState extends State<MainFoodPage> {
                               color: AppColors.mainColor)),
                     )
                   ]))),
-      const FoodPageBody(),
+      Expanded(
+          child: SingleChildScrollView(
+        child: FoodPageBody(),
+      )),
     ]));
   }
 }
