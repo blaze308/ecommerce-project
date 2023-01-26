@@ -57,9 +57,10 @@ class _ExpandibleTextState extends State<ExpandibleText> {
                   },
                   child: Row(
                     children: [
+                      SizedBox(height: Dimensions.height45),
                       SmallText(
                         size: Dimensions.font16,
-                        color: AppColors.paraColor,
+                        color: AppColors.mainColor,
                         text: "Show More",
                       ),
                       SizedBox(width: Dimensions.width10),
