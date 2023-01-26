@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/dimensions.dart';
+import 'package:ecommerce_app/widgets/app_column.dart';
 import 'package:ecommerce_app/widgets/big_text.dart';
 import 'package:ecommerce_app/widgets/icon_and_text_widgets.dart';
 import 'package:ecommerce_app/widgets/small_text.dart';
@@ -16,10 +17,10 @@ class FoodPageBody extends StatefulWidget {
 class _FoodPageBodyState extends State<FoodPageBody> {
   String imageOnline1 =
       "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60";
-  PageController pageController = PageController(viewportFraction: 0.85);
   String imageOnline2 =
       "https://images.unsplash.com/photo-1625758600922-4085dd859395?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80";
 
+  PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
   final double _scaleFactor = 0.8;
   final double _height = Dimensions.pageViewContainer;
@@ -75,21 +76,21 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             const BigText(text: "Popular"),
-            SizedBox(width: Dimensions.height10),
+            SizedBox(width: Dimensions.width10),
             Container(
               margin: const EdgeInsets.only(bottom: 3),
-              child: BigText(text: ".", color: Colors.black26),
+              child: const BigText(text: ".", color: Colors.black26),
             ),
-            SizedBox(width: Dimensions.height10),
+            SizedBox(width: Dimensions.width10),
             Container(
               margin: const EdgeInsets.only(bottom: 2),
-              child: SmallText(text: "Food Pairing"),
+              child: const SmallText(text: "Food Pairing"),
             ),
           ],
         ),
       ),
       ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 10,
           itemBuilder: (context, index) {
@@ -130,9 +131,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            BigText(text: "Delicious Beverage Apples"),
+                            const BigText(text: "Delicious Beverage Apples"),
                             SizedBox(height: Dimensions.height10),
-                            SmallText(text: "With Chinese Characteristics"),
+                            const SmallText(
+                                text: "With Chinese Characteristics"),
                             SizedBox(height: Dimensions.height10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -227,47 +229,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     top: Dimensions.height15,
                     left: Dimensions.height15,
                     right: Dimensions.height15),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const BigText(text: "Pizza Slice"),
-                      SizedBox(height: Dimensions.height10),
-                      Row(children: [
-                        Wrap(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(
-                                    Icons.star,
-                                    color: AppColors.mainColor,
-                                    size: Dimensions.height15,
-                                  )),
-                        ),
-                        SizedBox(width: Dimensions.height10),
-                        const SmallText(text: "4.5"),
-                        SizedBox(width: Dimensions.height10),
-                        const SmallText(text: "1287"),
-                        SizedBox(width: Dimensions.height10),
-                        const SmallText(text: "comments"),
-                      ]),
-                      SizedBox(height: Dimensions.height20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          IconAndTextWidget(
-                              icon: Icons.circle_sharp,
-                              text: "Normal",
-                              iconColor: AppColors.iconColor),
-                          IconAndTextWidget(
-                              icon: Icons.location_on,
-                              text: "1.7km",
-                              iconColor: AppColors.mainColor),
-                          IconAndTextWidget(
-                              icon: Icons.access_time_rounded,
-                              text: "32min",
-                              iconColor: AppColors.iconColor2),
-                        ],
-                      ),
-                    ])),
+                child: const AppColumn(text: "Chinese Side")),
           ),
         )
       ]),

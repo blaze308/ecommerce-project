@@ -47,7 +47,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                               color: AppColors.mainColor)),
                     )
                   ]))),
-      Expanded(
+      const Expanded(
           child: SingleChildScrollView(
         child: FoodPageBody(),
       )),
