@@ -113,7 +113,8 @@ class PopularFoodDetail extends StatelessWidget {
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: AppColors.mainColor,
                 ),
-                child: BigText(text: "\$10 | Add to cart", color: Colors.white),
+                child: const BigText(
+                    text: "\$10 | Add to cart", color: Colors.white),
               ),
             ],
           )),

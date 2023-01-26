@@ -91,7 +91,8 @@ class RecommendedFoodDetail extends StatelessWidget {
                   iconSize: Dimensions.iconSize24,
                 ),
                 BigText(
-                  text: "\$12.99 " + " X" + " 0",
+                  // text: "\$12.99 " + " X" + " 0",
+                  text: "\$12.99  X 0",
                   size: Dimensions.font26,
                 ),
                 AppIcon(
@@ -129,7 +130,7 @@ class RecommendedFoodDetail extends StatelessWidget {
                         borderRadius:
                             BorderRadius.circular(Dimensions.radius20),
                         color: Colors.white),
-                    child: Icon(
+                    child: const Icon(
                       Icons.favorite,
                       color: AppColors.mainColor,
                     ),
