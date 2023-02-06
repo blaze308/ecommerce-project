@@ -6,6 +6,6 @@ class PopularProductRepo extends GetxService {
   PopularProductRepo({required this.apiClient});
 
   Future<Response> getPopularProductList() async {
-    return await apiClient.getData("end point url");
+    return await apiClient.getData("https://api-generator.retool.com/6ivfxs/products");
   }
 }

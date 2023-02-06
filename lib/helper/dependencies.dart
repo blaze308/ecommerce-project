@@ -5,9 +5,12 @@ import 'package:get/get.dart';
 
 Future<void> init() async {
   //apiClient
-  Get.lazyPut(() => ApiClient(appBaseUrl: ""));
+  Get.lazyPut(
+      () => ApiClient(appBaseUrl: "https://retoolapi.dev/6ivfxs/products"));
+
 //repo
   Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
+
 //controllers
   Get.lazyPut(() => PopularProductController(popularProductRepo: Get.find()));
 }
